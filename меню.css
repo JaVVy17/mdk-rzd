@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+body {
+    font-family: 'inter';
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* Видеофон */
+.video-bg {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.video-bg video {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    margin: auto;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.effects {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+.video-bg__content {
+    z-index: 2;
+    color: #ffffff;
+    font-size: 25px;
+}
+.main {
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+  @media (max-width: 991px) {
+    .video-bg {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 640px) {
+    .video-bg  {
+      display: none;
+    }
+  }
+
+
+
+
+
+
+
+/* меню */
+
+/* картинка ржд */
+
+/* Стили для мобильных телефонов */
+@media only screen and (max-width: 600px) {
+    .img-1 {
+        width: 40%; /* Пример размера для мобильных телефонов */
+        /* Другие стили */
+    }
+}
+
+/* Стили для планшетов */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .img-1 {
+        width: 15%; /* Пример размера для планшетов */
+        /* Другие стили */
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .img-1 {
+        width: 10%; /* Пример размера для больших экранов */
+        position: absolute;
+        top: 100%; /* Расположение под видео */
+        left: calc(25%); /* Смещение от центра экрана плюс 120 пикселей */
+        transform: translateX(-50%); /* Смещение влево на половину ширины элемента */
+        /* Другие стили */
+    }
+}
+@media only screen and (min-width: 1280px) and (max-height: 800px) {
+    .img-1 {
+        left: calc(15%); /* Уменьшаем смещение для этого разрешения */
+        transform: translateX(-50%);
+        /* Другие стили */
+    }
+}
+nav {
+    display: flex; /* Используем flexbox для выравнивания элементов в строку */
+    justify-content: center; /* Центрируем элементы */
+    align-items: center; /* Центрируем элементы по вертикали */
+    padding: 0; /* Убираем внутренние отступы */
+    margin-top: 30px;
+    margin-left: 10%;
+}
+
+/* Общие стили для текста в навигации */
+nav a {
+    color: white; /* Устанавливаем цвет текста на белый */
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    text-decoration: none;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content a {
+    color: white; /* Устанавливаем цвет текста на белый для ссылок в выпадающем меню */
+    font-size: 16px; /* Устанавливаем размер шрифта для ссылок в выпадающем меню */
+}
+
+.active1, .dropdown, .buyTickets {
+    margin: 0 45px; /* Добавляем небольшое пространство между элементами */
+}
+
+.dropdown {
+    position: relative; /* Устанавливаем относительное позиционирование для выпадающего списка */
+}
+.buyTicket {
+    text-decoration: none;
+    color: white;
+    margin: 5px 10px;
+    text-align: center;
+    border: 2px solid rgb(184, 38, 33);
+    border-radius: 10px;
+    padding: 15px;
+}
+.dropdown-content {
+    display: none; /* Скрываем выпадающее меню */
+    position: absolute; /* Позиционируем выпадающее меню абсолютно */
+    background-color: black; /* Цвет фона для выпадающего меню */
+    min-width: 160px; /* Минимальная ширина выпадающего меню */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень для выпадающего меню */
+    z-index: 1; /* Устанавливаем z-index, чтобы выпадающее меню было поверх других элементов */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Показываем выпадающее меню при наведении */
+}
+
+/* Стили для ссылок внутри выпадающего меню */
+.dropdown-content a {
+    color: white; /* Цвет текста для ссылок */
+    padding: 12px 16px; /* Внутренние отступы для ссылок */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    display: block; /* Отображаем ссылки как блочные элементы */
+}
+
+/* Стили для изменения цвета ссылок при наведении */
+.dropdown-content a:hover {
+    background-color: black; /* Цвет фона для ссылок при наведении */
+}
+/* Стили для устройств с разрешением 1024x600 */
+@media only screen and (min-width: 1024px) and (max-height: 600px) {
+    nav {
+        margin-top: -45px; /* Убираем верхний отступ, чтобы поднять меню вверх */
+        /* Другие стили */
+    }
+}
+/* Стили для иконки меню */
+.menu-icon {
+    display: none; /* Скрываем иконку на больших экранах */
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 3; /* Убедитесь, что иконка будет поверх всех элементов */
+    cursor: pointer;
+}
+
+/* Отображаем иконку меню только на мобильных устройствах */
+@media only screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Стили для полосок иконки меню */
+.menu-icon div {
+    width: 30px; /* Ширина полосок */
+    height: 5px; /* Высота полосок */
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Стили для навигации */
+nav {
+    /* ... Ваши существующие стили ... */
+    z-index: 2; /* Убедитесь, что навигация будет под иконкой меню */
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content {
+    /* ... Ваши существующие стили ... */
+    display: none; /* Изначально меню скрыто */
+}
+
+/* Стили для активного состояния выпадающего меню */
+.menu-icon:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+/* Стили для иконки меню и чекбокса */
+.menu-icon {
+    /* ... */
+    cursor: pointer;
+}
+
+/* Скрыть чекбокс */
+#toggle-menu {
+    display: none;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content {
+    /* ... */
+    display: none; /* Изначально меню скрыто */
+    /* ... */
+}
+
+/* Отображение выпадающего меню при активном чекбоксе */
+#toggle-menu:checked + .menu-icon + .dropdown-content {
+    display: block;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+body {
+    font-family: 'inter';
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* Видеофон */
+.video-bg {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.video-bg video {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    margin: auto;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.effects {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+.video-bg__content {
+    z-index: 2;
+    color: #ffffff;
+    font-size: 25px;
+}
+.main {
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+  @media (max-width: 991px) {
+    .video-bg {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 640px) {
+    .video-bg  {
+      display: none;
+    }
+  }
+
+
+
+
+
+
+
+/* меню */
+
+/* картинка ржд */
+
+/* Стили для мобильных телефонов */
+@media only screen and (max-width: 600px) {
+    .img-1 {
+        width: 40%; /* Пример размера для мобильных телефонов */
+        /* Другие стили */
+    }
+}
+
+/* Стили для планшетов */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .img-1 {
+        width: 15%; /* Пример размера для планшетов */
+        /* Другие стили */
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .img-1 {
+        width: 10%; /* Пример размера для больших экранов */
+        position: absolute;
+        top: 100%; /* Расположение под видео */
+        left: calc(25%); /* Смещение от центра экрана плюс 120 пикселей */
+        transform: translateX(-50%); /* Смещение влево на половину ширины элемента */
+        /* Другие стили */
+    }
+}
+@media only screen and (min-width: 1280px) and (max-height: 800px) {
+    .img-1 {
+        left: calc(15%); /* Уменьшаем смещение для этого разрешения */
+        transform: translateX(-50%);
+        /* Другие стили */
+    }
+}
+nav {
+    display: flex; /* Используем flexbox для выравнивания элементов в строку */
+    justify-content: center; /* Центрируем элементы */
+    align-items: center; /* Центрируем элементы по вертикали */
+    padding: 0; /* Убираем внутренние отступы */
+    margin-top: 30px;
+    margin-left: 10%;
+}
+
+/* Общие стили для текста в навигации */
+nav a {
+    color: white; /* Устанавливаем цвет текста на белый */
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    text-decoration: none;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content a {
+    color: white; /* Устанавливаем цвет текста на белый для ссылок в выпадающем меню */
+    font-size: 16px; /* Устанавливаем размер шрифта для ссылок в выпадающем меню */
+}
+
+.active1, .dropdown, .buyTickets {
+    margin: 0 45px; /* Добавляем небольшое пространство между элементами */
+}
+
+.dropdown {
+    position: relative; /* Устанавливаем относительное позиционирование для выпадающего списка */
+}
+.buyTicket {
+    text-decoration: none;
+    color: white;
+    margin: 5px 5px;
+    text-align: center;
+    border: 2px solid rgb(184, 38, 33);
+    border-radius: 8px;
+    padding: 8px;
+    margin-left: -10%;
+}
+.dropdown-content {
+    display: none; /* Скрываем выпадающее меню */
+    position: absolute; /* Позиционируем выпадающее меню абсолютно */
+    background-color: black; /* Цвет фона для выпадающего меню */
+    min-width: 160px; /* Минимальная ширина выпадающего меню */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень для выпадающего меню */
+    z-index: 1; /* Устанавливаем z-index, чтобы выпадающее меню было поверх других элементов */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Показываем выпадающее меню при наведении */
+}
+
+/* Стили для ссылок внутри выпадающего меню */
+.dropdown-content a {
+    color: white; /* Цвет текста для ссылок */
+    padding: 12px 16px; /* Внутренние отступы для ссылок */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    display: block; /* Отображаем ссылки как блочные элементы */
+}
+
+/* Стили для изменения цвета ссылок при наведении */
+.dropdown-content a:hover {
+    background-color: black; /* Цвет фона для ссылок при наведении */
+}
+/* Стили для устройств с разрешением 1024x600 */
+@media only screen and (min-width: 1024px) and (max-height: 600px) {
+    nav {
+        margin-top: -45px; /* Убираем верхний отступ, чтобы поднять меню вверх */
+        /* Другие стили */
+    }
+}
+/* Стили для иконки меню */
+.menu-icon {
+    display: none; /* Скрываем иконку на больших экранах */
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 3; /* Убедитесь, что иконка будет поверх всех элементов */
+    cursor: pointer;
+}
+
+/* Отображаем иконку меню только на мобильных устройствах */
+@media only screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Стили для полосок иконки меню */
+.menu-icon div {
+    width: 30px; /* Ширина полосок */
+    height: 5px; /* Высота полосок */
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Стили для навигации */
+nav {
+    /* ... Ваши существующие стили ... */
+    z-index: 2; /* Убедитесь, что навигация будет под иконкой меню */
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content {
+    /* ... Ваши существующие стили ... */
+    display: none; /* Изначально меню скрыто */
+}
+
+/* Стили для активного состояния выпадающего меню */
+.menu-icon:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+/* Стили для иконки меню и чекбокса */
+.menu-icon {
+    /* ... */
+    cursor: pointer;
+}
+
+/* Скрыть чекбокс */
+#toggle-menu {
+    display: none;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content {
+    /* ... */
+    display: none; /* Изначально меню скрыто */
+    /* ... */
+}
+
+/* Отображение выпадающего меню при активном чекбоксе */
+#toggle-menu:checked + .menu-icon + .dropdown-content {
+    display: block;
+}
+
+
+/* Стили для иконки меню */
+.menu-icon {
+    /* Ваши стили для иконки меню */
+    cursor: pointer;
+    display: none; /* Скрываем иконку на больших экранах */
+    /* ... */
+}
+
+/* Отображаем иконку меню только на мобильных устройствах */
+@media only screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
+
+/* Скрыть чекбокс */
+.menu-checkbox {
+    display: none;
+}
+
+/* Стили для навигации */
+nav {
+    /* ... Ваши существующие стили ... */
+    display: none; /* Изначально меню скрыто */
+    padding: 10px;
+    margin-top: -10px;
+    margin-left: 50%;
+}
+
+/* Отображение меню при активном чекбоксе */
+.menu-checkbox:checked ~ nav {
+    display: block;
+}
+}
+
+
+
+/* Анимированный слайдер */
+.anim-slider{
+  width: 40vw;
+  margin: 6%;
+  height: 30vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://gas-kvas.com/grafic/uploads/posts/2024-01/1705738627_gas-kvas-com-p-logotip-rzhd-na-prozrachnom-fone-26.jpg);
+  animation: slide 15s infinite;
+  border: 10px solid #ffffff5b;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+}
+.anim-slider:hover{
+  border: 10px solid rgba(255, 255, 255, 0.719);
+  border-radius: 50px;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+@keyframes slide{
+  0%{
+    background-image: url(https://hdpic.club/uploads/posts/2021-12/1639219824_22-hdpic-club-p-piter-poezd-22.jpg);
+  }
+  33%{
+    background-image: url(image/ab6e0c76-92ec-4597-a60c-d033d31798b7.jpg);
+  }
+
+  66%{
+    background-image: url(https://hdpic.club/uploads/posts/2022-01/1643160896_22-hdpic-club-p-poezda-dalnego-sledovaniya-47.jpg);
+  }
+
+  100%{
+    background-image: url(https://static.life.ru/posts/2018/08/1140627/9a8b3ea4fda912b92bcd6c4d2920f7a5.jpg);
+  }
+}
+
+/* Media queries for responsiveness */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+ .anim-slider {
+    width: 40vw;
+    height: 30vw;
+  }
+}
+
+/* Medium screens (laptops) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+ .anim-slider {
+    width: 50vw;
+    height: 35vw;
+  }
+}
+
+/* Small screens (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+ .anim-slider {
+    width: 60vw;
+    height: 40vw;
+  }
+}
+
+/* Extra small screens (mobiles) */
+@media only screen and (max-width: 767px) {
+ .anim-slider {
+    width: 80vw;
+    height: 50vw;
+    margin: 10%;
+  }
+}

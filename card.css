@@ -1,0 +1,78 @@
+ :root{
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.1, .7, 0, 1);
+}
+/* body{
+    background-color: #111010;
+} */
+
+.pereiti{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin-top: 60px;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+.items{
+    display: flex;
+    gap: .5rem;
+    perspective: calc(var(--index)*70);
+}
+
+.item{
+    background-color: black;
+    width: calc(var(--index)*12);
+    height: calc(var(--index)*20);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: var(--transition);
+    filter: grayscale() brightness(.6);
+    border-radius: 20px;
+}
+.item::before, .item::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    right: calc(var(--index)*-1.5);
+}
+.item::after{
+    left: calc(var(--index)*-1.5);
+}
+
+.items .item:hover{
+    transform: translateZ(calc(var(--index)*15 ));
+    transition: var(--transition);
+    filter: inherit;
+    /* width: 20vw; */
+}
+
+/*правая часть*/
+.items .item:hover + *{
+    transform: translateZ(calc(var(--index)*3.5)) rotateY(30deg) ;
+    transition: var(--transition);
+    z-index: -1;
+    filter: inherit;
+}
+.items .item:hover + * + *{
+    transform: translateZ(calc(var(--index)*2))rotateY(35deg);
+    transition: var(--transition);
+    z-index: -2;
+}
+
+/*Левая*/
+ .item:has(+ *:hover){
+    transform: translateZ(calc(var(--index)*3.5)) rotateY(-30deg) ;
+    transition: var(--transition);
+    filter: inherit;
+} 
+.item:has(+ * + *:hover){
+    transform: translateZ(calc(var(--index)*2)) rotateY(-35deg) ;
+    transition: var(--transition);
+} 

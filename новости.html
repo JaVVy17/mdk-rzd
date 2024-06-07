@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="новости.css">
+  <title>Новости РЖД</title>
+</head>
+<body>
+    
+  
+    <nav id="top">
+        <div class="nav-container">
+          <div class="img1">
+            <a href="навиг.html"><img src="images videos/images/logo rzd.png" class="img-1" alt="Logo"></a>
+          </div>
+          <div class="nav-links">
+            <div class="active1">
+              <a class="active" href="raspisanie.html">Расписание</a>
+            </div>
+            <div class="dropdown">
+              <a class="active dropbtn" href="#">Информация</a>
+              <div class="dropdown-content">
+                <a href="новости.html" class="news">Новости</a>
+                <a href="пассажирам.html" class="passengers">Пассажирам</a>
+                <a href="история.html" class="history">История</a>
+              </div>
+            </div>
+            <div class="active1">
+              <a class="active" href="#contact" class="contact">Контакты</a>
+            </div>
+          </div>
+          <div class="buyTickets">
+            <a class="buyTicket" href="raspisanie.html">КУПИТЬ БИЛЕТ</a>
+          </div>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+          const burgerMenu = document.querySelector(".burger-menu");
+          const navLinks = document.querySelector(".nav-links");
+        
+          burgerMenu.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+          });
+        
+          // Slider functionality
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".slide");
+          const totalSlides = slides.length;
+        
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.style.display = i === index ? "block" : "none";
+            });
+          }
+        
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          }
+        
+          setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        
+          showSlide(currentIndex); // Show the first slide
+        });
+        
+        
+        </script>
+
+
+<div class="back-to-top">
+  <a href="#top">
+    <div class="arrow-circle"></div>
+  </a>
+</div>
+
+<div class="wrapper">
+    <div class="items">
+        <div onclick="document.location='новости.html#News'" class="item" tabindex="1" style="background-image: url(image/WGfHw-sRBh4.jpg)"></div>
+        <div onclick="document.location='новости.html#passang'" class="item" tabindex="1" style="background-image: url(image/UqUi1PaJ98Y.jpg)"></div>
+        <div onclick="document.location='новости.html#history'" class="item" tabindex="1" style="background-image: url(image/Hxbcm0OWY8U.jpg)"></div>
+        <div onclick="document.location='новости.html#history1'" class="item" tabindex="1" style="background-image: url(image/Q1tKoeTfmS4.jpg)"></div>
+    </div> 
+</div> 
+</nav> 
+
+
+
+  <div class="container">
+    <!-- Новостной блок -->
+    <main id="News"> 
+    <div class="news-item">
+      <h2>Новый высокоскоростной маршрут</h2>
+      <p>РЖД запускает новый маршрут высокоскоростного поезда между Москвой и Санкт-Петербургом.<br><br>
+        Новые поезда будут оснащены передовыми технологиями, позволяющими достичь значительно более высокой скорости и обеспечить комфортное путешествие для пассажиров.<br><br>
+        Этот шаг демонстрирует стремление РЖД к постоянному улучшению услуг и внедрению новейших технологий в железнодорожном транспорте
+    </p><br><br>
+      <img src="image/1200px-ЭВС1-06,_Россия,_Ленинградская_область,_перегон_Колпино_-_Саблино_(Trainpix_145909).jpg" alt="Высокоскоростной поезд">
+    </div>
+    <!-- Новостной блок 2 -->
+<div class="news-item">
+    <main id="passang"> 
+    <h2>Цифровые билеты</h2>
+    <p>РЖД анонсировала ввод цифровых билетов.<br><br>
+        В рамках программы цифровизации РЖД представили инновационную систему электронных билетов.<br><br>
+        Теперь пассажиры могут легко и удобно бронировать и оплачивать проезд онлайн, а также получать билеты в электронном виде.<br><br>
+        Это улучшение значительно облегчит процесс путешествия и сделает его более удобным для всех пассажиров.</p><br><br>
+    <img src="image/сканер турникета.jpg" alt="Цифровые билеты РЖД">
+  </div>
+  
+  <!-- Новостной блок 3 -->
+  <div class="news-item">
+    <main id="history"> 
+    <h2>Модернизация ж/д станций</h2>
+    <p>РЖД запускает проект по модернизации железнодорожных станций.<br><br>
+        РЖД объявили о планах модернизации нескольких крупных железнодорожных станций по всей стране. <br><br>
+        Планируется внедрение современных технологий и нового дизайна станций, направленных на повышение уровня комфорта и улучшение обслуживания пассажиров.<br><br>
+     
+        Это позволит создать современные и функциональные инфраструктуры для всех, пользующихся железнодорожным транспортом.</p><br><br>
+    </p>
+    <img src="image/электричка1(6).jpg" alt="Модернизация ж/д станций">
+  </div>
+  
+  <!-- Новостной блок 4 -->
+  <div class="news-item">
+    <main id="history1"> 
+    <h2>Программа экологической безопасности</h2>
+    <p>РЖД запускает программу скидок для студентов, предлагая более доступные цены на проезд в период учебного года.<br><br>
+        РЖД представили программу по снижению вредного воздействия на окружающую среду.
+        В рамках этой программы будут внедрены новые технологии, направленные на уменьшение выбросов и повышение энергоэффективности железнодорожного транспорта.<br><br>
+
+        Это демонстрирует ответственное отношение компании к экологическим вопросам и стремление к созданию более чистой и устойчивой среды для всех.</p><br><br>
+
+    <img src="image/ekologiya.png" alt="Программа экологической безопасности">
+  </div>
+  
+  </div>
+</body>
+</html>

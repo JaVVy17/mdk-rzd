@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Новостная лента РЖД</title>
+<div class="news-item">
+  <div class="news-item-text">
+    <h2>Название новости</h2>
+    <p>бла бла бла Давид</p>
+  </div>
+  <img src="image/ekologiya.png" alt="Описание изображения">
+</div>
+<style>
+  /* Основные стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Стили контейнера новостного блока */
+.news-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px; /* Закругление углов */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень для блока */
+}
+
+/* Стили текстового блока */
+.news-item-text {
+  width: 50%;
+}
+
+/* Стили изображения */
+.news-item img {
+  max-width: 45%;
+  height: auto;
+  border-radius: 10px; /* Закругление углов изображения */
+}
+
+/* Адаптивные медиа-запросы */
+@media(max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+  }
+
+  .news-item-text, .news-item img {
+    width: 100%;
+  }
+}
+
+</style>

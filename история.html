@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="история.css">
+  <title>Новости РЖД</title>
+</head>
+<body>
+    
+  
+    <nav id="top">
+        <div class="nav-container">
+          <div class="img1">
+            <a href="навиг.html"><img src="images videos/images/logo rzd.png" class="img-1" alt="Logo"></a>
+          </div>
+          <div class="nav-links">
+            <div class="active1">
+              <a class="active" href="raspisanie.html">Расписание</a>
+            </div>
+            <div class="dropdown">
+              <a class="active dropbtn" href="#">Информация</a>
+              <div class="dropdown-content">
+                <a href="новости.html" class="news">Новости</a>
+                <a href="пассажирам.html" class="passengers">Пассажирам</a>
+                <a href="история.html" class="history">История</a>
+              </div>
+            </div>
+            <div class="active1">
+              <a class="active" href="#contact" class="contact">Контакты</a>
+            </div>
+          </div>
+          <div class="buyTickets">
+            <a class="buyTicket" href="raspisanie.html">КУПИТЬ БИЛЕТ</a>
+          </div>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+          const burgerMenu = document.querySelector(".burger-menu");
+          const navLinks = document.querySelector(".nav-links");
+        
+          burgerMenu.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+          });
+        
+          // Slider functionality
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".slide");
+          const totalSlides = slides.length;
+        
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.style.display = i === index ? "block" : "none";
+            });
+          }
+        
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          }
+        
+          setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        
+          showSlide(currentIndex); // Show the first slide
+        });
+        
+        
+        </script>
+
+        
+  <div class="back-to-top">
+    <a href="#top">
+      <div class="arrow-circle"></div>
+    </a>
+  </div>
+  
+
+<div class="wrapper">
+    <div class="items">
+        <div onclick="document.location='история.html#News'" class="item" tabindex="1" style="background-image: url(image/fJ2WBbx2ND0.jpg)"></div>
+        <div onclick="document.location='история.html#passang'" class="item" tabindex="1" style="background-image: url(image/UEzDsDjaGws.jpg)"></div>
+        <div onclick="document.location='история.html#history'" class="item" tabindex="1" style="background-image: url(image/OH_mEdVZlLI.jpg)"></div>
+        <div onclick="document.location='история.html#history1'" class="item" tabindex="1" style="background-image: url(image/fcKI3Q6s2CM.jpg)"></div>
+    </div> 
+</div> 
+</nav>  -->
+
+
+
+  <div class="container">
+    <!-- Новостной блок -->
+    <main id="News"> 
+    <div class="news-item">
+      <h2>Паровоз «Проворный»</h2>
+      <p>Паровоз "Проворный" был первым паровозом, открывшим движение по Царскосельской железной дороге, первой в России железной дороге общего пользования. Он был изготовлен на заводе Стефенсона в Англии и имел конструкционную скорость 60 км/ч.<br><br>
+        "Проворный" был важным шагом в развитии железнодорожной инфраструктуры в России. Он обеспечил безопасное и эффективное движение по железной дороге, что стало возможным благодаря его высокой мощности и высокой скорости.
+    </p><br><br>
+      <img src="image/Parovoz-Provornyj.jpg" alt="Проворный">
+    </div>
+    <!-- Новостной блок 2 -->
+<div class="news-item">
+    <main id="passang"> 
+    <h2>Великая Отечественная Война</h2>
+    <p>Во время Великой Отечественной войны в СССР поезд играл важную роль в перевозке войск, техники, боеприпасов и продовольствия на фронте, а также эвакуации раненых и мирного населения в Тыл.<br><br>
+      Советские железные дороги были переведены на железнодорожные рельсы - вся производственная база была перестроена в глубоком тылу, недосягаемом для врага. Были построены сотни новых бронепоездов, использованы железнодорожные батареи ПВО. Бронепоезда участвовали в боях, уничтожении танков, фронте и живой силе.<br><br>
+
+      Особую роль сыграли санитарные поезда, которые эвакуировали миллионы раненых и больных, оказали им первую помощь и провели операцию прямо в пути. Они были настоящими госпиталями на колесах. Только железнодорожное снабжение спасло Ленинград во время блокады.<br><br>
+    
+      Без самоотверженного труда железнодорожников, находившихся на переднем крае, постоянно подвергавшихся вражеским атакам, победа в войне была бы невозможна. Их подвиг остается в памяти народа.<br><br></p> 
+    
+    <img src="https://aif-s3.aif.ru/images/014/939/0de8f48b56bdcde0a330b199f8a754ca.JPG" alt="ВОВ"><BR><BR>
+    <img src="https://rg.ru/uploads/images/186/38/85/6666.jpg" alt="ВОВ2">
+  </div>
+  
+  <!-- Новостной блок 3 -->
+  <div class="news-item">
+    <main id="history"> 
+    <h2>ЭР-200</h2>
+    <p>Поезд «ЭР-200» был первым и одним скоростным электропоездом в СССР, разработанным для движения со скоростью до 200 км/ч. Его создание началось в 1967 году, а в эксплуатации он был введен в 1984 году на линии Москва-Ленинград (ныне Санкт-Петербург).<br><br>
+      В разработке «ЭР-200» принимали участие коллективы более 50 научно-исследовательских и проектных организаций. Поезд создается около 25 лет, чтобы затем уступить место немецкому Сапсану.<br><br>
+
+      «ЭР-200» курсировал по линии Москва-Санкт-Петербург с 1984 по 2009 год. В 2001 году был проведен капитальный ремонт, в нем появились вагоны бизнес-класса. Безопасность обеспечивают пневматическая подвеска и три тормозные системы, одна из которых - магниторельсовая - впоследствии была демонтирована как небезопасная.<br><br>
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/%D0%AD%D0%A0200_%D0%B2%D1%81%D0%B5.JPG" alt="ЭР-200"><BR><BR><BR>
+    <img src="https://sun9-8.userapi.com/impg/5wku0vgYYBWtALwyKpP8hf5NWwdM5nPDKUDumg/eKpsTpLr7oY.jpg?size=1023x640&quality=96&sign=8d31a703870e5a5b26e9dc5cac616956&type=album" alt="ЭР-200_1">
+  </div>
+  
+  <!-- Новостной блок 4 -->
+  <div class="news-item">
+    <main id="history1"> 
+    <h2>Сапсан</h2>
+    <p>Поезд «Сапсан» — это высокоскоростной электропоезд, разработанный немецкой компанией Siemens специально для эксплуатации на российских железных дорогах.<br><br>
+      «Сапсан» был запущен в сети в 2009 году на маршруте Москва-Санкт-Петербург. Он стал первым высокоскоростным поездом в России, заменив виртуальный «ЭР-200».<br><br>
+
+      Поезд отличается повышенной безопасностью - в нем установлены три независимые тормозные системы, включая магниторельсовую. Пассажирам доступны Wi-Fi, розетки, вагон-ресторан и специальные места для детей и инвалидов.<br><br>
+      
+      Сегодня «Сапсан» — один из самых популярных и комфортных способов передвижения между двумя столицами России.</p><br><br>
+      
+
+    <img src="https://cdn2.tu-tu.ru/image/source/2/95ad084ba2c026b18c3b8d638ed0cddb/" alt="Сапсан"><br><br>
+    <img src="https://avatars.dzeninfra.ru/get-zen_doc/1592433/pub_5de62083fbe6e700b04a6138_5de622606d29c100ac117764/scale_1200" alt="Сапсан1">
+  </div>
+  
+  </div>
+</body>
+</html>
