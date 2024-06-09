@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="навиг.css">
+  <title>Главная</title>
+</head>
+<body>
+
+  <div class="video-bg">
+    <video src="images videos/videos/Твое будущее с РЖД.mp4" type="video/mp4" autoplay muted loop></video>
+    <div class="effects"></div>
+    <div class="video-bg__content">
+    </div>
+ </div>
+
+
+  <nav id="top">
+    <div class="nav-container">
+      <div class="img1">
+        <a href="навиг.html"><img src="images videos/images/logo rzd.png" class="img-1" alt="Logo"></a>
+      </div>
+      <div class="nav-links">
+        <div class="active1">
+          <a class="active" href="raspisanie.html">Расписание</a>
+        </div>
+        <div class="dropdown">
+          <a class="active dropbtn" href="#">Информация</a>
+          <div class="dropdown-content">
+            <a href="новости.html" class="news">Новости</a>
+            <a href="пассажирам.html" class="passengers">Пассажирам</a>
+            <a href="история.html" class="history">История</a>
+          </div>
+        </div>
+        <div class="active1">
+          <a class="active" href="#contact" class="contact">Контакты</a>
+        </div>
+      </div>
+      <div class="buyTickets">
+        <a class="buyTicket" href="raspisanie.html">КУПИТЬ БИЛЕТ</a>
+      </div>
+      <div class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="anim-slider"> </div>
+    <div class="sidebar">
+      <h2 class="sidebar-title">Сквозь время</h2>
+      <div class="sidebar-grid">
+        <a href="история.html#News"><img src="images videos/images/history card1.jpg" alt="Image 1"></a>
+        <a href="история.html#passang"><img src="images videos/images/hist card2.jpg" alt="Image 2"></a>
+        <a href="история.html#history"><img src="images videos/images/hist card 3.jpg" alt="Image 3"></a>
+        <a href="история.html#history1"><img src="images videos/images/hist card 4.jpg" alt="Image 4"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="news-feed">
+    <div class="news">
+      <h3>Заголовок новости 1</h3>
+      <p>Текст новости 1</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 2</h3>
+      <p>Текст новости 2</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 3</h3>
+      <p>Текст новости 3</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 4</h3>
+      <p>Текст новости 4</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 5</h3>
+      <p>Текст новости 5</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 6</h3>
+      <p>Текст новости 6</p>
+    </div>
+    <div class="news">
+      <h3>Заголовок новости 7</h3>
+      <p>Текст новости 7</p>
+    </div>
+  </div>
+  
+
+  <div class="back-to-top">
+    <a href="#top">
+      <div class="arrow-circle"></div>
+    </a>
+  </div>
+  
+  
+
+  <div id="contact" class="contacts">
+    <div class="contact-info">
+      <!-- Блок с информацией о контактах -->
+      <h2>Контактная информация</h2>
+      <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+      <p>Email: example@example.com</p>
+      <p>Адрес</p>
+      <p>г. Москва, ул. Новая Басманная, д. 2/1, стр. 1</p>
+      <p>Ежедневно с 09:00 до 20:40</p>
+      <p>директор</p>
+      <p>Олег Белозеров, +7 (499) 262-97-15</p>
+      <p></p>
+      <!-- Другая информация о контактах -->
+    </div>
+    <div class="map">
+      <h2>Карта</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2210.092336191724!2d37.649273632408615!3d55.768950124281176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a632b6a32ad%3A0x692944a6168c5a42!2z0KDQltCU!5e0!3m2!1sru!2sru!4v1715951214074!5m2!1sru!2sru" width="700" height="580" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <footer>
+    <!-- Простой подвал -->
+    <p>&copy; 2024 Все права защищены</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  const burgerMenu = document.querySelector(".burger-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  burgerMenu.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+  });
+
+  // Slider functionality
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+  showSlide(currentIndex); // Show the first slide
+});
+
+
+</script>

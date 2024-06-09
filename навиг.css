@@ -1,0 +1,520 @@
+/* Видеофон */
+.video-bg {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.video-bg video {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    margin: auto;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.effects {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+.video-bg__content {
+    z-index: 2;
+    color: #ffffff;
+    font-size: 25px;
+}
+.main {
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+  @media (max-width: 991px) {
+    .video-bg {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 640px) {
+    .video-bg  {
+      display: none;
+    }
+  }
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000000;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #141414;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.img1 img {
+  height: 50px;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background 0.5s ease;
+  box-sizing: border-box;
+  line-height: 1.5;
+  height: 50px; /* Фиксированная высота */
+  display: flex; /* Используем flexbox для центровки текста */
+  align-items: center;
+}
+
+.nav-links a:hover {
+  background: #ffffff25;
+  border-radius: 15px;
+}
+
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.nav-links .dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  transition: background 0.5s ease;
+  box-sizing: border-box;
+  line-height: 1.5;
+  height: 50px; /* Фиксированная высота */
+  display: flex; /* Используем flexbox для центровки текста */
+  align-items: center;
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #9b9595d2;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.buyTickets a {
+  background-color: #da2b1e00;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px solid #da2b1e;
+  transition: ease 0.5s;
+}
+
+.buyTickets a:hover{
+    background: #ffffff25;
+    border-radius: 10px;
+    transition: ease 0.5s;
+    padding: 25px;
+  }
+
+
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-links {
+    display: none;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .nav-links a, .buyTickets {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: grid;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 500px; /* Adjust as necessary */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.slides {
+  display: flex;
+  transition: transform 1s ease; /* Smooth transition */
+  width: 400%; /* For four slides */
+}
+
+.slide {
+  width: 100%;
+  flex: 1 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sidebar {
+  background-color: #aa2016;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 40vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto; /* Центрируем по горизонтали */
+  margin-top: 15%; /* Добавляем отступ сверху */
+}
+.sidebar-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 24px;
+  background-color: #00000054;
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.sidebar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  height: calc(100% - 40px); /* Account for title height */
+  
+}
+.sidebar-grid a{
+  transition: all 0.5s;
+}
+
+
+.sidebar-grid a:hover{
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+
+.sidebar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .slider, .sidebar {
+    height: auto; /* Adjust as necessary */
+  }
+
+  .sidebar-title {
+    font-size: 20px;
+  }
+}
+
+/* Анимированный слайдер */
+.anim-slider{
+  width: 55vw !important; /* Увеличиваем ширину */
+  height: 40vw !important; /* Увеличиваем высоту */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://gas-kvas.com/grafic/uploads/posts/2024-01/1705738627_gas-kvas-com-p-logotip-rzhd-na-prozrachnom-fone-26.jpg);
+  animation: slide 15s infinite;
+  border: 10px solid #ffffff5b;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+  margin: auto; /* Центрируем по горизонтали */
+  margin-top: 7%; /* Добавляем отступ сверху */
+}
+.anim-slider:hover{
+  border: 10px solid rgba(255, 255, 255, 0.719);
+  border-radius: 50px;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+
+
+@keyframes slide{
+  0%{
+    background-image: url(https://hdpic.club/uploads/posts/2021-12/1639219824_22-hdpic-club-p-piter-poezd-22.jpg);
+  }
+  33%{
+    background-image: url(image/ab6e0c76-92ec-4597-a60c-d033d31798b7.jpg);
+  }
+
+  66%{
+    background-image: url(https://hdpic.club/uploads/posts/2022-01/1643160896_22-hdpic-club-p-poezda-dalnego-sledovaniya-47.jpg);
+  }
+
+  100%{
+    background-image: url(https://static.life.ru/posts/2018/08/1140627/9a8b3ea4fda912b92bcd6c4d2920f7a5.jpg);
+  }
+}
+
+/* Media queries for responsiveness */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+ .anim-slider {
+    width: 40vw;
+    height: 30vw;
+  }
+}
+
+/* Medium screens (laptops) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+ .anim-slider {
+    width: 50vw;
+    height: 35vw;
+  }
+}
+
+/* Small screens (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+ .anim-slider {
+    width: 60vw;
+    height: 40vw;
+  }
+}
+
+/* Extra small screens (mobiles) */
+@media only screen and (max-width: 767px) {
+ .anim-slider {
+    display: none;
+  }
+}
+
+/*Новости*/
+.news-feed {
+  background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1613679254_33-p-fon-dlya-prezentatsii-rzhd-35.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+.news {
+  background-color: rgba(255, 255, 255, 0.8); /* Прозрачный фон для лучшей читаемости текста */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out; /* Анимация */
+}
+
+.news h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.news p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Анимация при наведении */
+.news:hover {
+  transform: translateY(-5px);
+}
+
+
+/*Кнопка вернуться*/
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  }
+  .arrow-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  position: relative;
+  cursor: pointer;
+  }
+  .arrow-circle:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(315deg);
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  }
+  .back-to-top a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  }
+
+
+
+/*Контакты*/
+.contacts {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.contact-info,
+.map,
+footer {
+  flex: 1;
+  margin-bottom: 20px; /* Добавляем отступ между блоками */
+}
+
+.contact-info,
+.map {
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #141414;
+  color: #fff;
+  
+}
+
+.contact-info h2,
+.map h2 {
+  margin-bottom: 10px;
+}
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+
+  .contact-info,
+  .map {
+    margin-bottom: 10px; /* Уменьшаем отступ между блоками на мобильных устройствах */
+  }
+  
+  .contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info,
+.map {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px; /* Вы можете настроить высоту карты по вашему усмотрению */
+}
+
+}
+
+
+/* Стили для подвала */
+footer {
+  text-align: center;
+  background-color: #141414;
+  color: #fff;
+  padding: 10px;
+}
+

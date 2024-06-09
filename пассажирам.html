@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="пассажирам.css">
+  <title>Пассажирам РЖД</title>
+</head>
+<body>
+    
+  
+    <nav id="top">
+        <div class="nav-container">
+          <div class="img1">
+            <a href="навиг.html"><img src="images videos/images/logo rzd.png" class="img-1" alt="Logo"></a>
+          </div>
+          <div class="nav-links">
+            <div class="active1">
+              <a class="active" href="raspisanie.html">Расписание</a>
+            </div>
+            <div class="dropdown">
+              <a class="active dropbtn" href="#">Информация</a>
+              <div class="dropdown-content">
+                <a href="новости.html" class="news">Новости</a>
+                <a href="пассажирам.html" class="passengers">Пассажирам</a>
+                <a href="история.html" class="history">История</a>
+              </div>
+            </div>
+            <div class="active1">
+              <a class="active" href="#contact" class="contact">Контакты</a>
+            </div>
+          </div>
+          <div class="buyTickets">
+            <a class="buyTicket" href="raspisanie.html">КУПИТЬ БИЛЕТ</a>
+          </div>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+          const burgerMenu = document.querySelector(".burger-menu");
+          const navLinks = document.querySelector(".nav-links");
+        
+          burgerMenu.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+          });
+        
+          // Slider functionality
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".slide");
+          const totalSlides = slides.length;
+        
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.style.display = i === index ? "block" : "none";
+            });
+          }
+        
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          }
+        
+          setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        
+          showSlide(currentIndex); // Show the first slide
+        });
+        
+        
+        </script>
+        <br><br><br><br><br>
+
+
+        
+        <div class="back-to-top">
+          <a href="#top">
+            <div class="arrow-circle"></div>
+          </a>
+        </div>
+
+
+
+  <div class="container">
+    <!-- Новостной блок -->
+    <div class="news-item">
+      <h2>Внедрение бесконтактной оплаты проезда в поездах РЖД</h2>
+      <p>РЖД внедряет бесконтактные оплаты проезда.<br><br>
+        
+     Теперь пассажиры могут использовать бесконтактные способы оплаты, такие как банковские карты и мобильные платежи, для приобретения билетов и дополнительных услуг на всех маршрутах.<br><br>
+     
+     "Это улучшение сделает процесс оплаты проще и более удобным для всех наших пассажиров".</p><br><br>
+    </div>
+    <!-- Новостной блок 2 -->
+<div class="news-item">
+    <h2>Новая программа лояльности для постоянных пассажиров РЖД</h2>
+    <p>РЖД анонсировала введение новой программы лояльности для постоянных клиентов.<br><br>
+      Накапливайте баллы и обменивайте их на бесплатные билеты, улучшенный сервис и другие привилегии.<br><br>
+
+      "Мы ценим вашу преданность, и эта программа создана специально для вас".<br><br></p> 
+  </div>
+  
+  <!-- Новостной блок 3 -->
+  <div class="news-item">
+    <h2>Обновленное расписание и дополнительные удобства для пассажиров</h2>
+    <p>РЖД представила обновленное расписание и дополнительные удобства для пассажиров<br><br>
+      Наше обновленное расписание теперь предлагает больше вариантов для удобного путешествия.<br><br>
+      Мы также предоставляем дополнительные удобства, такие как Wi-Fi на борту и комфортабельные купе<br><br>
+      "Мы стремимся сделать ваше путешествие максимально приятным и комфортным".<br><br>
+    </p>
+  </div>
+  
+  <!-- Новостной блок 4 -->
+  <div class="news-item">
+    <h2>Специальные акции и скидки для пассажиров на летний сезон</h2>
+    <p>РЖД запускает акции скидки на летний сезон<br><br>
+      Встречайте лето с выгодными предложениями от РЖД! Мы запускаем специальные акции и скидки для пассажиров на летний сезон.<br><br>
+
+      Получите возможность приобрести билеты по выгодным ценам, а также воспользоваться специальными предложениями на дополнительные услуги.<br><br>
+     
+      "Путешествуйте с удовольствием вместе с РЖД!"</p><br><br> 
+  </div>
+
+  <div class="news-item">
+    <h2>Открытие новых маршрутов в рамках проекта "Туристический поезд"</h2>
+    <p>РЖД расширяет географию проекта "Туристический поезд", открывая новые маршруты по живописным уголкам России. <br><br>
+
+      Получите возможность приобрести билеты по выгодным ценам, а также воспользоваться специальными предложениями на дополнительные услуги.<br><br>
+     
+      "Путешествуйте с удовольствием вместе с РЖД!"</p><br><br> 
+  </div>
+  <div class="news-item">
+    <h2>Специальные акции и скидки для пассажиров на летний сезон</h2>
+    <p>РЖД запускает акции скидки на летний сезон<br><br>
+      Теперь пассажиры могут совершить увлекательное путешествие по Золотому кольцу, Байкальскому региону или Кавказским Минеральным Водам.<br><br>
+      В поездах предусмотрены комфортные купе, вагоны-рестораны и экскурсионные программы.</p><br><br> 
+  </div>
+
+
+  <div class="news-item"> 
+    <h2>Специальные акции и скидки для пассажиров на летний сезон</h2>
+    <p>РЖД запускает акции скидки на летний сезон<br><br>
+      Встречайте лето с выгодными предложениями от РЖД! Мы запускаем специальные акции и скидки для пассажиров на летний сезон.<br><br>
+
+      Получите возможность приобрести билеты по выгодным ценам, а также воспользоваться специальными предложениями на дополнительные услуги.<br><br>
+     
+      "Путешествуйте с удовольствием вместе с РЖД!"</p><br><br> 
+  </div>
+  
+  </div>
+</body>
+</html>

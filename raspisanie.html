@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маршруты</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .search-container input, .search-container button {
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .search-input-container {
+            flex: 1;
+            margin-right: 0;
+        }
+
+        .search-input-container input {
+            width: 90%;
+        }
+
+        .search-container button {
+            background-color: #c9534b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #555;
+        }
+
+        .route-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: 0.5s;
+        }
+
+        .route-option:hover {
+            background-color: #e2e1e185;
+            cursor: pointer;
+            transform: scale(1.03);
+            transition: 0.5s;
+        }
+
+        .route-option img {
+            border-radius: 25%;
+            margin-right: 20px;
+            width: 130px;
+            height: 130px;
+        }
+
+        .route-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .route-info span {
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .route-info small {
+            color: #667;
+            font-size: 20px;
+        }
+
+        .route-cost {
+            font-weight: 700;
+            color: #000;
+            font-size: 23px;
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .route-option {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .route-info {
+                margin-top: 10px;
+            }
+
+            .route-cost {
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input-container {
+                margin-bottom: 10px;
+            }
+
+            .search-input-container input {
+                width: 90%;
+            }
+        }
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000000;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #141414;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.img1 img {
+  height: 50px;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  transition: background 0.5s ease;
+  box-sizing: border-box;
+  line-height: 1.5;
+  height: 50px; /* Фиксированная высота */
+  display: flex; /* Используем flexbox для центровки текста */
+  align-items: center;
+}
+
+.nav-links a:hover {
+  background: #ffffff25;
+  border-radius: 15px;
+}
+
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.nav-links .dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  transition: background 0.5s ease;
+  box-sizing: border-box;
+  line-height: 1.5;
+  height: 50px; /* Фиксированная высота */
+  display: flex; /* Используем flexbox для центровки текста */
+  align-items: center;
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #9b9595d2;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.buyTickets a {
+  background-color: #da2b1e00;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px solid #da2b1e;
+  transition: ease 0.5s;
+}
+
+.buyTickets a:hover{
+    background: #ffffff25;
+    border-radius: 10px;
+    transition: ease 0.5s;
+    padding: 25px;
+  }
+
+
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-links {
+    display: none;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .nav-links a, .buyTickets {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: grid;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <nav id="top">
+        <div class="nav-container">
+          <div class="img1">
+            <a href="навиг.html"><img src="images videos/images/logo rzd.png" class="img-1" alt="Logo"></a>
+          </div>
+          <div class="nav-links">
+            <div class="active1">
+              <a class="active" href="raspisanie.html">Расписание</a>
+            </div>
+            <div class="dropdown">
+              <a class="active dropbtn" href="#">Информация</a>
+              <div class="dropdown-content">
+                <a href="новости.html" class="news">Новости</a>
+                <a href="пассажирам.html" class="passengers">Пассажирам</a>
+                <a href="история.html" class="history">История</a>
+              </div>
+            </div>
+            <div class="active1">
+              <a class="active" href="#contact" class="contact">Контакты</a>
+            </div>
+          </div>
+          <div class="buyTickets">
+            <a class="buyTicket" href="raspisanie.html">КУПИТЬ БИЛЕТ</a>
+          </div>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-input-container">
+                <input type="text" id="from" placeholder="Откуда">
+            </div>
+            <div class="search-input-container">
+                <input type="text" id="to" placeholder="Куда">
+            </div>
+            <div class="search-input-container">
+                <input type="number" id="maxPrice" placeholder="До ... руб.">
+            </div>
+            <button onclick="searchRoutes()">Найти</button>
+        </div>
+        <div id="routes_container">
+            <!-- Маршруты из гугл -->
+        </div>
+    </div>
+
+    <script>
+
+
+          // Бургер-меню
+          document.addEventListener("DOMContentLoaded", function() {
+          const burgerMenu = document.querySelector(".burger-menu");
+          const navLinks = document.querySelector(".nav-links");
+        
+          burgerMenu.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+          });
+        
+          // Слайдер
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".slide");
+          const totalSlides = slides.length;
+        
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.style.display = i === index ? "block" : "none";
+            });
+          }
+        
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          }
+        
+          setInterval(nextSlide, 3000); 
+        
+          showSlide(currentIndex); 
+        });
+        
+
+
+        let allRoutes = [];
+
+        fetch('https://script.google.com/macros/s/AKfycbzN-5oRXCSiUa6c67BdDnWBWApko-Vi8IuWnE1P3_qwVQ2L-pm27FE32JJEb18t-YNY_g/exec')
+            .then(response => response.json())
+            .then(data => {
+                allRoutes = data;
+                displayRoutes(data);
+            });
+
+        function displayRoutes(routes) {
+            var routesContainer = document.getElementById('routes_container');
+            routesContainer.innerHTML = '';
+
+            routes.forEach(route => {
+                var routeOption = document.createElement('div');
+                routeOption.classList.add('route-option');
+                routeOption.addEventListener('click', () => handleRowClick(route));
+
+                var cityImage = document.createElement('img');
+                cityImage.setAttribute('src', route.routeImage);
+                cityImage.setAttribute('alt', 'Город');
+
+                var routeInfo = document.createElement('div');
+                routeInfo.classList.add('route-info');
+
+                var routeNameSpan = document.createElement('span');
+                routeNameSpan.textContent = route.routeName;
+
+                var routeDetailsSmall = document.createElement('small');
+                routeDetailsSmall.textContent = route.routeDuration + ' | ' + route.routeDate + ' | ' + route.routeTime;
+
+                var routeCostDiv = document.createElement('div');
+                routeCostDiv.classList.add('route-cost');
+                routeCostDiv.textContent = ' ' + route.routeCost + '₽';
+
+                routeInfo.appendChild(routeNameSpan);
+                routeInfo.appendChild(routeDetailsSmall);
+
+                routeOption.appendChild(cityImage);
+                routeOption.appendChild(routeInfo);
+                routeOption.appendChild(routeCostDiv);
+
+                routesContainer.appendChild(routeOption);
+            });
+        }
+
+        function handleRowClick(route) {
+            localStorage.setItem('routeName', route.routeName);
+            localStorage.setItem('routeDuration', route.routeDuration);
+            localStorage.setItem('routeDescription', route.routeDescription);
+            localStorage.setItem('routeDistance', route.routeDistance);
+            localStorage.setItem('routeDate', route.routeDate);
+            localStorage.setItem('routeTime', route.routeTime);
+            localStorage.setItem('routeCost', route.routeCost);
+
+            window.open('test book form.html', '_blank');
+        }
+
+        function searchRoutes() {
+            const from = document.getElementById('from').value.toLowerCase();
+            const to = document.getElementById('to').value.toLowerCase();
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+
+            const filteredRoutes = allRoutes.filter(route => {
+                const routeFrom = from ? route.routeName.toLowerCase().includes(from) : true;
+                const routeTo = to ? route.routeName.toLowerCase().includes(to) : true;
+                const routePrice = !isNaN(maxPrice) ? route.routeCost <= maxPrice : true;
+
+                return routeFrom && routeTo && routePrice;
+            });
+
+            displayRoutes(filteredRoutes);
+        }
+    </script>
+</body>
+</html>
